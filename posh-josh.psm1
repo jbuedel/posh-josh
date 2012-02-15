@@ -116,3 +116,17 @@ function svn-diff {
 	# Would be nice to turn this into a powershell script instead of a batch file...
 	svn diff --diff-cmd "$posh_josh_dir\diff-override.bat"
 }
+
+# Copied from posh-git
+function Get-LocalOrParentPath($path) {
+   $checkIn = Get-Item .
+   while ($checkIn -ne $NULL) {
+       $pathToTest = [System.IO.Path]::Combine($checkIn.fullname, $path)
+       if (Test-Path $pathToTest) {
+           return $pathToTest
+       } else {
+           $checkIn = $checkIn.parent
+       }
+   }
+   return $null
+}
