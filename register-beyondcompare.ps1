@@ -28,3 +28,6 @@ function hg-registerbeyondcompare {
 #opts.bcomp = /ro
 
 }
+
+
+git-registerbeyondcompare
