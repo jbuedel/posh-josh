@@ -8,6 +8,9 @@ function git-registerbeyondcompare {
 		# git 3 way merge
 		git config --global merge.tool bc3
 		(get-alias bc ) | %{ git config --global mergetool.bc3.path $_.Definition}
+		
+		# And turn off that annoying prompting.
+		git config --global difftool.prompt false
 
 		write-host "Beyond Compare has been registered in git for the diff and difftool commands."
 	}
