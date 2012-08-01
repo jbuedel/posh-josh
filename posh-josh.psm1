@@ -42,6 +42,10 @@ function git-init {
 	#git add -A
 }
 
+function git-tree {
+	git log --graph --oneline --all
+}
+
 # Adds all files currently tracked by svn.
 function hg-add-from-svn {
 	# List all files (filter out directories) tracked by svn, and hg add them.
