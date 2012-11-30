@@ -3,6 +3,7 @@ function git-registerbeyondcompare {
 
 		# git difftool 
 		git config --global diff.tool bc3
+        # TODO: Use bcompare.exe instead of bcomp.exe.  So --dir-diff works properly.
 		(get-alias bc ) | %{ git config --global difftool.bc3.path $_.Definition}
 
 		# git 3 way merge
