@@ -1,14 +1,17 @@
 function git-registerbeyondcompare {
 	if(get-alias bc) {
 
+		# Use bcompare.exe instead of bcomp.exe.  It works better w/ --dir-diff.  
+		# Per http://stackoverflow.com/questions/13310995/git-difftool-dir-diff-is-not-creating-temp-files-for-beyond-compare-3-to-use
+		$bcpath = (split-path (Get-Alias bc).Definition) + "\bcompare.exe"
+	
 		# git difftool 
 		git config --global diff.tool bc3
-        # TODO: Use bcompare.exe instead of bcomp.exe.  So --dir-diff works properly.
-		(get-alias bc ) | %{ git config --global difftool.bc3.path $_.Definition}
+		git config --global difftool.bc3.path $bcpath
 
 		# git 3 way merge
 		git config --global merge.tool bc3
-		(get-alias bc ) | %{ git config --global mergetool.bc3.path $_.Definition}
+		git config --global mergetool.bc3.path $bcpath
 		
 		# And turn off that annoying prompting.
 		git config --global difftool.prompt false
