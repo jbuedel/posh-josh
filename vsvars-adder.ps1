@@ -32,8 +32,8 @@ function VS2010()
 	VsVars32($env:VS100COMNTOOLS)
 	"Visual Studio 2010 tools have been added to your path."
 }
-function VS11()
+function VS2012()
 {
 	VsVars32($env:VS110COMNTOOLS)
-	"Visual Studio 11 tools have been added to your path."
+	"Visual Studio 2012 tools have been added to your path."
 }
