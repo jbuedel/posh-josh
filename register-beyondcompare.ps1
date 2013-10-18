@@ -7,6 +7,7 @@ function git-registerbeyondcompare {
 		$bcpath = (split-path (Get-Alias bc).Definition) + "\bcompare.exe"
 	
 		# git difftool 
+                # TODO: Open BC with all files expanded via the flag /expandall
 		git config --global diff.tool bc3
 		git config --global difftool.bc3.path $bcpath
 
