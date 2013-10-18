@@ -1,5 +1,6 @@
 function git-registerbeyondcompare {
-	if(get-alias bc) {
+        $bc_alias = get-alias bc
+	if($bc_alias -and (test-path $bc_alias.Definition)) {
 
 		# Use bcompare.exe instead of bcomp.exe.  It works better w/ --dir-diff.  
 		# Per http://stackoverflow.com/questions/13310995/git-difftool-dir-diff-is-not-creating-temp-files-for-beyond-compare-3-to-use
@@ -16,12 +17,12 @@ function git-registerbeyondcompare {
 		# And turn off that annoying prompting.
 		git config --global difftool.prompt false
 
-		write-host "Beyond Compare has been registered in git for the diff and difftool commands."
+		write-host "Beyond Compare has been registered in git for the diff, difftool, and mergetool commands."
 	}
 	else {
 		write-host "The alias 'bc' needs to exist, and point to bcomp.exe."
 		write-host "Do that like so: set-alias 'c:\Program Files (x86)\Beyond Compare 3\bcomp.exe'"
-		write-host "Then return this command."
+		write-host "Then rerun this command."
 	}
 }
 
