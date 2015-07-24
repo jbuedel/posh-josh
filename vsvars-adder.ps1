@@ -44,3 +44,7 @@ function VS2013()
 {
 	VsVars32 $env:VS120COMNTOOLS "2013"
 }
+function VS2015() 
+{
+	VsVars32 $env:VS140COMNTOOLS "2015"
+}
