@@ -44,6 +44,9 @@ PrecompileWeb/
 # Visual Studio temp files
 *\.sln\.docstates
 
+# Roslyn cache 
+*.sln.ide/
+
 # Aptana
 .project
 
