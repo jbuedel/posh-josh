@@ -16,14 +16,8 @@ $posh_josh_dir = Split-Path -parent $MyInvocation.MyCommand.Definition
 # Make my powershell have all the dev tools like Visual Studio Command Prompt.
 . "$posh_josh_dir\vsvars-adder.ps1"
 
-# Add zip and unzip commands
-. "$posh_josh_dir\zip-commands.ps1"
-
 # Add beyond compare registration methods
 . "$posh_josh_dir\register-beyondcompare.ps1"
-
-# A decent wget implementation.
-. "$posh_josh_dir\Get-WebFile.ps1"
 
 # My own handy method for spinning up a .Net mercurial repo with standard ignores for .Net.
 function hg-init {
