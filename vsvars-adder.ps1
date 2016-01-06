@@ -44,6 +44,13 @@ function VS2013()
 {
 	VsVars32 $env:VS120COMNTOOLS "2013"
 }
+
+
+# TODO: Perhaps I could make these commands also open files.
+# IE: vs2015 mycode.cs
+# IE: vs2015 Foo.sln
+#
+# Also consider accepting files by pipe as well
 function VS2015() 
 {
 	VsVars32 $env:VS140COMNTOOLS "2015"
