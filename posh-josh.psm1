@@ -19,6 +19,9 @@ $posh_josh_dir = Split-Path -parent $MyInvocation.MyCommand.Definition
 # Add beyond compare registration methods
 . "$posh_josh_dir\register-beyondcompare.ps1"
 
+# Put the full path to vim, else it often can't find the plugins.
+git config --global core.editor "'$((Get-Command vim).Source)'"
+
 # My own handy method for spinning up a .Net mercurial repo with standard ignores for .Net.
 function hg-init {
 	echo "Copying posh-josh\standard.hgignore -> .\.hgignore"
