@@ -55,3 +55,9 @@ function VS2015()
 {
 	VsVars32 $env:VS140COMNTOOLS "2015"
 }
+function VS2017() 
+{
+  echo "VS2017 isn't hooked up yet. I think I need something in C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\Tools\vsdevcmd\core. Like vsdevcmd_start probably."
+  #VsVars32 $env:VS150COMNTOOLS "2017"
+}
+ 
